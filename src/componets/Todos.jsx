@@ -14,8 +14,9 @@ const Todos = (props) => {
         <li><input type="checkbox"/>{props.items[4]}</li>
         <li><input type="checkbox"/>{props.items[5]}</li>*/}
 
+
         {props.items.map((item, index) =>{
-          return <li key={index}><input type="checkbox"/>{item}</li>
+            return <li key={index}><input type="checkbox" checked={item.completed}/>{item.name}</li>
         })}
 
       </ul>
