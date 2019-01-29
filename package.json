@@ -21,5 +21,16 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "huskey" : {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "linters": {
+      "src/**/*.{js,jsx,json,css,scss,md}" : ["prettier","git add"]
+    },
+    "ignore": ["node_modules/**", ".git/**"]
+  }
 }

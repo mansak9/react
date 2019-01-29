@@ -1,12 +1,46 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./index.css";
-import App from "./App";
-// import * as serviceWorker from "./serviceWorker";
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const FunctionalComponent = () => (
+  <div>
+    <h1>함수형 컴포넌트</h1>
+    <h2>현재 시간은?{new Date().toLocaleTimeString()}</h2>
+  </div>
+);
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-// serviceWorker.unregister();
+class StatelessComponent extends React.Component {
+  render() {
+    return (
+      <div>
+        <h1>상태가 없는 클래스형 컴포넌트</h1>
+        <h2>현재 시간은?{new Date().toLocaleTimeString()}</h2>
+      </div>
+    );
+  }
+}
+
+class StatefullComponent extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      now: new Date().toLocaleTimeString()
+    };
+  }
+  render() {
+    return (
+      <div>
+        <h1>안녕? 이거든 상태가 있는 컴포넌트야!</h1>
+        <h2>현재 시간은?{this.state.now}</h2>
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(
+  <div>
+    <FunctionalComponent />
+    <StatefullComponent />
+    <StatelessComponent />
+  </div>,
+  document.getElementById("root")
+);
