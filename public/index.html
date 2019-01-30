@@ -23,10 +23,58 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+    <style>
+      .box {
+        border: 1px solid #282c34;
+        width: 100px;
+        height: 100px;
+      }
+
+      .red{
+        background-color: red;
+        position: static;
+        width: 90px;
+        height: 90px;
+        left: 150px;
+        top : 0px;
+      }
+
+      .blue{
+        position: static;
+        background-color: blue;
+        width: 50px;
+        height: 50px;
+        right: 20px;
+        bottom: 20px;
+      }
+      .green{
+        position: absolute;
+        background-color: green;
+        width: 25px;
+        height: 25px;
+        left: 10px;
+        top :10px;
+      }
+      .green{
+        background-color: green;
+      }
+      .yellow{
+        background-color: yellow;
+      }
+
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+
+    <div id="box1" class="box red">
+      <div id="box2" class="box blue">
+        <div id="box3" class="box green"></div>
+      </div>
+    </div>
+    <div id="box4" class="box yellow">
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
