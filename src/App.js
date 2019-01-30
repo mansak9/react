@@ -48,6 +48,10 @@ class App extends Component {
     }, 10000);
   }
 
+  handleExpireTimer(arg) {
+    console.log("타이머 종료", arg);
+  }
+
   render() {
     return (
       <div className="App">
@@ -55,7 +59,10 @@ class App extends Component {
         {/*<TodoList title={"강의 목표"} items={this.state.data} />*/}
         {/*)}*/}
 
-        <Timer expireDate={"2019-01-30T18:00:00+09:00"} />
+        <Timer
+          expireDate={"2019-01-29T12:40:00+09:00"}
+          onExpired={this.handleExpireTimer}
+        />
       </div>
     );
   }
