@@ -7,7 +7,6 @@ moment.locale("ko");
 
 class Timer extends React.Component {
   constructor(props) {
-    console.log(props);
     super(props);
     this.state = {
       mtNow: moment()
@@ -25,7 +24,9 @@ class Timer extends React.Component {
   };
 
   componentDidMount() {
+    console.log("componentDidMount1");
     if (!this.checkExpired()) {
+      console.log("componentDidMount2");
       this.nTimer = setInterval(() => {
         this.setState({
           mtNow: moment()
@@ -35,7 +36,10 @@ class Timer extends React.Component {
   }
 
   componentDidUpdate() {
+    console.log("componentDidUpdate1");
     if (this.checkExpired) {
+      console.log("componentDidUpdate2");
+      console.log(this.checkExpired(), "끝");
       clearInterval(this.nTimer);
     }
   }
@@ -46,8 +50,6 @@ class Timer extends React.Component {
     const mtExpire = moment(expireDate);
 
     const isExpire = mtExpire < mtNow;
-
-    console.log(onExpired("qwe123"));
 
     // let msg = null;
     //
