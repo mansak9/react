@@ -48,6 +48,7 @@ class App extends Component {
   }
 
   render() {
+    console.log(this.state.isUnmount);
     return (
       <div className="App">
         {!this.state.isUnmount && (
