@@ -1,4 +1,5 @@
 import React from "react";
+import TodoListItem from "../componets/TodoListItem";
 
 class TodoList extends React.Component {
   constructor(props) {
@@ -18,6 +19,11 @@ class TodoList extends React.Component {
     console.log("click", this);
   }
 
+  handleInputChange = ({ target, index }) => {
+    console.log(index);
+    console.log(this.props.items);
+  };
+
   render() {
     const { title, items } = this.props;
 
@@ -26,12 +32,7 @@ class TodoList extends React.Component {
         <h2 onClick={() => this.handleTitleClick()}>{title}</h2>
         <ul>
           {items.map(({ name, completed }, index) => {
-            return (
-              <li key={`todo-item-${index}`}>
-                <input type="checkbox" checked={completed} />
-                {name}
-              </li>
-            );
+            return <TodoListItem {...items} index={index} />;
           })}
         </ul>
       </div>

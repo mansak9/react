@@ -1,10 +1,14 @@
 import React, { Component } from "react";
-import "./App.css";
-import TodoList from "./componets/TodoList";
+import "./App.less";
+// import TodoList from "./componets/TodoList";
 import Timer from "./componets/Timer";
-import Toggle from "./componets/Toggle";
-import Header from "./componets/Header";
-import MarkEditor from "./componets/MarkEditor";
+// import Toggle from "./componets/Toggle";
+// import Header from "./componets/Header";
+// import MarkEditor from "./componets/MarkEditor";
+// import ControlledForm from "./componets/ControlledForm";
+import { Button } from "antd";
+import "./App.less";
+import Counter from "./componets/Counter";
 
 const data = [
   { name: "React 개발에 필요한 환경을 구축한다.", completed: true },
@@ -56,17 +60,20 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        {!this.state.isUnmount && (
-          <TodoList title={"강의 목표"} items={this.state.data} />
-        )}
+        <Button type={"primary"}>Ant 스타일 버튼</Button>
+        {/*{!this.state.isUnmount && (*/}
+        {/*<TodoList title={"강의 목표"} items={this.state.data} />*/}
+        {/*)}*/}
 
         <Timer
-          expireDate={"2019-01-29T12:40:00+09:00"}
+          expireDate={"2019-01-31T14:40:00+09:00"}
           onExpired={this.handleExpireTimer}
         />
-        <Toggle />
-        <Header />
-        <MarkEditor />
+        <Counter />
+        {/*<Toggle />*/}
+        {/*<Header />*/}
+        {/*<MarkEditor />*/}
+        {/*<ControlledForm />*/}
       </div>
     );
   }

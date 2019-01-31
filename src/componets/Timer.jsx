@@ -2,6 +2,7 @@ import React from "react";
 import "./Timer.css";
 import moment from "moment";
 import "moment/locale/ko";
+import "./Timer.less";
 
 moment.locale("ko");
 
